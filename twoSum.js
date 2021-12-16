@@ -55,6 +55,21 @@ var twoSum = function(nums, target) {
     };
 };
 
+let nums = [2,7,11,15];
+let target = 9;
+
+console.log(twoSum(nums, target)); // -> [0, 1]
+
+nums = [3,2,4];
+target = 6;
+
+console.log(twoSum(nums, target)); // -> [1,2]
+
+nums = [3,3];
+target = 6;
+
+console.log(twoSum(nums, target)); // -> [0,1]
+
 // Easy / Fast / Simple / 52.13% / 106 ms / 41 MB
 
 var twoSum = function(nums, target) {
@@ -89,7 +104,8 @@ const hashTable = {
 
 1. Create a hashTable
 2. Iterate nums
-	2.1 Find the complement of nums[i] in the hashTable by checking the key of the hashTable object. In this way, the iteration time will be significantly reduced. If found, return [i, found]
+	2.1 Find the complement of nums[i] in the hashTable by checking the key of the hashTable object. 
+	In this way, the iteration time will be significantly reduced. If found, return [i, found]
 3. If not found, return [0,0] */
 
 var twoSum = function(nums, target) {
