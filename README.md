@@ -2,3 +2,4 @@
 
 twoSum
 findComplement
+bstSum
