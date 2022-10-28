@@ -1,0 +1,27 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "twoSum findComplement bstSum",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoyoyojoe/algorithms.git"
+  },
+  "author": "Joey Ma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yoyoyojoe/algorithms/issues"
+  },
+  "homepage": "https://github.com/yoyoyojoe/algorithms#readme",
+  "devDependencies": {
+    "eslint": "^8.23.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  }
+}

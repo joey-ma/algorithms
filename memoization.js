@@ -88,4 +88,30 @@ let k = 1;
 // console.log(memoizedFib3);
 
 // console.log("fib = " + memoizedFib3(10) + ", " + k);
-// // makes 9 calls
+// makes 9 calls
+
+function functionCallCounter(func, i = 0) {
+  i++;
+  return func;
+}
+
+// ! strategy talk || Alvin's Memoization Recipe
+// https://youtu.be/oBt53YbR9Kk
+
+const make_it_work = {
+  1: "visualize problem as a tree",
+  2: "implement the tree using recursion",
+  3: "test it",
+};
+
+const make_it_efficient = {
+  0: "actually much easier than making it work in the first place",
+  1: "add a memo object",
+  2: "add a base case to return memo values",
+  3: " store return values into the memo",
+};
+
+const strategy = {
+  1: make_it_work,
+  2: make_it_efficient,
+};
