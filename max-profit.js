@@ -143,8 +143,11 @@ const maxProfit5 = function (prices) {
   for (let i = 1; i < prices.length; i++) {
     if (prices[i] < minPrice) minPrice = prices[i];
     // else mostProfit = Math.max(mostProfit, price - minPrice);
-    // ! a simple else will work, but it is not good because Math.max is another o(n) & results in the solution being o(n^2)
+    // ! a simple else will work, but it is theoretically because Math.max is another o(n) & results in the solution being o(n^2), although currently we are comparing only 2 numbers here
+    // else mostProfit = mostProfit > price - minPrice ? mostProfit : price - minPrice;
+    // * is theoretically better
     if (prices[i] - minPrice > profit) profit = prices[i] - minPrice;
+    // this is explicit, clear, and a preferred route
   }
   return profit;
 };
