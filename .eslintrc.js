@@ -20,6 +20,7 @@ module.exports = {
     'no-param-reassign': ['off', { props: false }],
     'no-return-assign': 'off',
     'no-unused-vars': ['off'],
+    'no-restricted-syntax': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
   },
 };
