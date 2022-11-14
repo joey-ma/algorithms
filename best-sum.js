@@ -64,3 +64,12 @@ function bestSumMemoized(targetSum, numbers, memo = {}) {
 // console.log(bestSumMemoized(8, [2, 3, 5])); // [2, 2, 2, 2] or [2, 3, 3], [3, 5] -> [3, 5] would be the shortest array and the solution
 // console.log(bestSumMemoized(8, [1, 4, 5])); // [4, 4]
 console.log(bestSumMemoized(100, [1, 2, 5, 25])); // [25, 25, 25, 25]
+
+/*
+
+canSum -> can you do it? yes/no -> decision problem
+
+howSum -> how will you do it? -> combinatorial problem (any one combo or all combos)
+
+bestSum -> what is the 'best' way to do it? -> optimization problem
+*/

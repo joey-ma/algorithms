@@ -30,7 +30,7 @@ function howSum(targetSum, numbers) {
 // console.log(howSum(8, [2, 3, 5])); // [2, 2, 2, 2] or [3, 5]
 // console.log(howSum(0, [1, 2, 3])); // []
 // console.log(howSum(300, [7, 14])); // null, not efficient though: takes too long
-console.log('count.run', count.run); // fn ran 2269806339 times (minus iterations)
+// console.log('count.run', count.run); // fn ran 2269806339 times (minus iterations)
 
 // reset counting fn runs
 count.run = 0;
@@ -57,10 +57,10 @@ function howSumMemoized(targetSum, numbers, memo = { }) {
   return null;
 }
 
-// console.log(howSumMemoized(7, [5, 3, 4, 7])); // [4, 3]
-// console.log(howSumMemoized(7, [2, 3])); // [3, 2, 2]
-// console.log(howSumMemoized(7, [2, 4])); // null
-// console.log(howSumMemoized(8, [2, 3, 5])); // [2, 2, 2, 2] or [3, 5]
-// console.log(howSumMemoized(0, [1, 2, 3])); // []
+console.log(howSumMemoized(7, [5, 3, 4, 7])); // [4, 3]
+console.log(howSumMemoized(7, [2, 3])); // [3, 2, 2]
+console.log(howSumMemoized(7, [2, 4])); // null
+console.log(howSumMemoized(8, [2, 3, 5])); // [2, 2, 2, 2] or [3, 5]
+console.log(howSumMemoized(0, [1, 2, 3])); // []
 console.log(howSumMemoized(300, [7, 14])); // null, much faster now
 console.log('count.run', count.run); // fn ran 87 times (minus iterations)
