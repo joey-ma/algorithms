@@ -106,3 +106,24 @@ But Big-O measures only accurately describe how performance scales over really b
 Here, it's not surprising that 3 if statements are faster than a hash table lookup. 
 
 For 3-5 cases, if & switch statements are likely faster than a table lookup, but roughly 40 cases will prove that a table lookup will be faster than if & switch statements. */
+
+// a variation of prompt with simpler solution:
+
+function validateParens(string) {
+  // output: boolean
+  const stack = [];
+
+  // iterate through string
+  for (let i = 0; i < string.length; i++) {
+    const char = string[i];
+
+    if (char === '(') stack.push(char);
+
+    if (char === ')') {
+      const last_char = stack.pop();
+      if (last_char !== '(') return false;
+    }
+  }
+  
+  return stack.length === 0;
+}
