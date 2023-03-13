@@ -26,9 +26,9 @@ Both list1 and list2 are sorted in non-decreasing order.
 // Definition for singly-linked list.
 function ListNode(val, next) {
   this.val = (val === undefined ? 0 : val);
-
   this.next = (next === undefined ? null : next);
 }
+
 /**
  * @param {ListNode} list1
  * @param {ListNode} list2
@@ -39,34 +39,38 @@ const mergeTwoLists = function (list1, list2) {
   // your code here
 };
 
-const mergeTwoLists1 = function (list1, list2) {
-  const mergedList = new ListNode(-99);
-  let currentNode = mergedList;
+// approach by creating a new linked list
+// using list1 and list2 directly (losing reference to their head)
 
-  while (list1 !== null && list2 !== null) {
+const mergeTwoLists1 = function (list1, list2) {
+  const mergedList = new ListNode(); // dummy head
+  let currentNode = mergedList; // pointer to the head
+  // also can be thought of as tail, and the tail will be continously build out
+
+  while (list1 && list2) {
     if (list1.val < list2.val) {
       currentNode.next = list1;
-      console.log('Here', list1);
       list1 = list1.next;
     } else {
       currentNode.next = list2;
-      console.log('Here', list2);
       list2 = list2.next;
     }
-    // console.log('mergedList:', mergedList);
+    
     currentNode = currentNode.next;
-    // console.log('currentNode:', currentNode);
   }
 
-  if (list1 === null) {
-    currentNode.next = list2;
-  } else {
-    currentNode.next = list1;
-  }
+  if (list1) currentNode.next = list1;
+  // else currentNode.next = list2; // also works
+  if (list2) currentNode.next = list2; // but this makes more sense and is more methodical 
 
-  console.log(mergedList.next);
   return mergedList.next;
 };
+
+// Test Cases
+
+// create the linked lists for the current file to use
+const LL1 = [1, 2, 4].reduce(createLinkedList);
+const LL2 = [1, 3, 4].reduce(createLinkedList);
 
 function createLinkedList(acc, curr, i, arr) {
   if (i === 1) return new ListNode(acc, new ListNode(curr));
@@ -77,10 +81,7 @@ function createLinkedList(acc, curr, i, arr) {
   return acc;
 }
 
-const LL1 = [1, 2, 4].reduce(createLinkedList);
-const LL2 = [1, 3, 4].reduce(createLinkedList);
+console.log(LL1); // [1,2,4]
+console.log(LL2); // [1,3,4]
 
-console.log(LL1);
-console.log(LL2);
-
-mergeTwoLists1(LL1, LL2);
+mergeTwoLists1(LL1, LL2); // [1,1,2,3,4,4]
